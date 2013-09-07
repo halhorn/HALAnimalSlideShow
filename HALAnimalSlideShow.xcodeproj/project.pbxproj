@@ -24,6 +24,7 @@
 		29EEC9CF17DAB5190044603D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29EEC9CD17DAB5190044603D /* InfoPlist.strings */; };
 		29EEC9D217DAB5190044603D /* HALAnimalSlideShowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEC9D117DAB5190044603D /* HALAnimalSlideShowTests.m */; };
 		29EEC9DF17DAB5FD0044603D /* UIViewController+initFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEC9DE17DAB5FD0044603D /* UIViewController+initFromNib.m */; };
+		29EEC9E417DABC930044603D /* HALPhotoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEC9E317DABC930044603D /* HALPhotoEntity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		29EEC9D117DAB5190044603D /* HALAnimalSlideShowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HALAnimalSlideShowTests.m; sourceTree = "<group>"; };
 		29EEC9DD17DAB5FD0044603D /* UIViewController+initFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+initFromNib.h"; sourceTree = "<group>"; };
 		29EEC9DE17DAB5FD0044603D /* UIViewController+initFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+initFromNib.m"; sourceTree = "<group>"; };
+		29EEC9E217DABC930044603D /* HALPhotoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HALPhotoEntity.h; path = Entity/HALPhotoEntity.h; sourceTree = "<group>"; };
+		29EEC9E317DABC930044603D /* HALPhotoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HALPhotoEntity.m; path = Entity/HALPhotoEntity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				29EEC9DC17DAB5DA0044603D /* Category */,
+				29EEC9E117DABC4C0044603D /* Entity */,
 				29EEC9AF17DAB5190044603D /* HALAppDelegate.h */,
 				29EEC9B017DAB5190044603D /* HALAppDelegate.m */,
 				29EEC9E017DAB61C0044603D /* Model */,
@@ -187,6 +191,15 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		29EEC9E117DABC4C0044603D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				29EEC9E217DABC930044603D /* HALPhotoEntity.h */,
+				29EEC9E317DABC930044603D /* HALPhotoEntity.m */,
+			);
+			name = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +317,7 @@
 				29EEC9B117DAB5190044603D /* HALAppDelegate.m in Sources */,
 				29EEC9BA17DAB5190044603D /* HALSlideShowViewController.m in Sources */,
 				29EEC9DF17DAB5FD0044603D /* UIViewController+initFromNib.m in Sources */,
+				29EEC9E417DABC930044603D /* HALPhotoEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
