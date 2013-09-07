@@ -7,6 +7,14 @@
 //
 
 #import "HALSlideShowViewComponent.h"
+#import "HALPhotoList.h"
+#import "HALPhotoEntity.h"
+
+@interface HALSlideShowViewComponent()
+
+@property(nonatomic) HALPhotoList *photoList;
+
+@end
 
 @implementation HALSlideShowViewComponent
 
@@ -14,9 +22,24 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self setup];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup
+{
+    self.photoList = [[HALPhotoList alloc] init];
+    [self.photoList loadPhotoList];
 }
 
 /*
