@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HALViewController : UIViewController
+@interface HALSlideShowViewController : UIViewController
 
 @end

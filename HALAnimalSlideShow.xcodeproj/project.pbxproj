@@ -16,8 +16,8 @@
 		29EEC9B317DAB5190044603D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EEC9B217DAB5190044603D /* Default.png */; };
 		29EEC9B517DAB5190044603D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EEC9B417DAB5190044603D /* Default@2x.png */; };
 		29EEC9B717DAB5190044603D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EEC9B617DAB5190044603D /* Default-568h@2x.png */; };
-		29EEC9BA17DAB5190044603D /* HALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEC9B917DAB5190044603D /* HALViewController.m */; };
-		29EEC9BD17DAB5190044603D /* HALViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29EEC9BB17DAB5190044603D /* HALViewController.xib */; };
+		29EEC9BA17DAB5190044603D /* HALSlideShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEC9B917DAB5190044603D /* HALSlideShowViewController.m */; };
+		29EEC9BD17DAB5190044603D /* HALSlideShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29EEC9BB17DAB5190044603D /* HALSlideShowViewController.xib */; };
 		29EEC9C517DAB5190044603D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EEC9C417DAB5190044603D /* SenTestingKit.framework */; };
 		29EEC9C617DAB5190044603D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EEC9A017DAB5190044603D /* UIKit.framework */; };
 		29EEC9C717DAB5190044603D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EEC9A217DAB5190044603D /* Foundation.framework */; };
@@ -50,9 +50,9 @@
 		29EEC9B217DAB5190044603D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		29EEC9B417DAB5190044603D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		29EEC9B617DAB5190044603D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		29EEC9B817DAB5190044603D /* HALViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HALViewController.h; sourceTree = "<group>"; };
-		29EEC9B917DAB5190044603D /* HALViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HALViewController.m; sourceTree = "<group>"; };
-		29EEC9BC17DAB5190044603D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HALViewController.xib; sourceTree = "<group>"; };
+		29EEC9B817DAB5190044603D /* HALSlideShowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HALSlideShowViewController.h; sourceTree = "<group>"; };
+		29EEC9B917DAB5190044603D /* HALSlideShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HALSlideShowViewController.m; sourceTree = "<group>"; };
+		29EEC9BC17DAB5190044603D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HALSlideShowViewController.xib; sourceTree = "<group>"; };
 		29EEC9C317DAB5190044603D /* HALAnimalSlideShowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HALAnimalSlideShowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29EEC9C417DAB5190044603D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		29EEC9CC17DAB5190044603D /* HALAnimalSlideShowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HALAnimalSlideShowTests-Info.plist"; sourceTree = "<group>"; };
@@ -166,9 +166,9 @@
 		29EEC9DB17DAB5330044603D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				29EEC9B817DAB5190044603D /* HALViewController.h */,
-				29EEC9B917DAB5190044603D /* HALViewController.m */,
-				29EEC9BB17DAB5190044603D /* HALViewController.xib */,
+				29EEC9B817DAB5190044603D /* HALSlideShowViewController.h */,
+				29EEC9B917DAB5190044603D /* HALSlideShowViewController.m */,
+				29EEC9BB17DAB5190044603D /* HALSlideShowViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 				29EEC9B317DAB5190044603D /* Default.png in Resources */,
 				29EEC9B517DAB5190044603D /* Default@2x.png in Resources */,
 				29EEC9B717DAB5190044603D /* Default-568h@2x.png in Resources */,
-				29EEC9BD17DAB5190044603D /* HALViewController.xib in Resources */,
+				29EEC9BD17DAB5190044603D /* HALSlideShowViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +302,7 @@
 			files = (
 				29EEC9AD17DAB5190044603D /* main.m in Sources */,
 				29EEC9B117DAB5190044603D /* HALAppDelegate.m in Sources */,
-				29EEC9BA17DAB5190044603D /* HALViewController.m in Sources */,
+				29EEC9BA17DAB5190044603D /* HALSlideShowViewController.m in Sources */,
 				29EEC9DF17DAB5FD0044603D /* UIViewController+initFromNib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,12 +334,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		29EEC9BB17DAB5190044603D /* HALViewController.xib */ = {
+		29EEC9BB17DAB5190044603D /* HALSlideShowViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				29EEC9BC17DAB5190044603D /* en */,
 			);
-			name = HALViewController.xib;
+			name = HALSlideShowViewController.xib;
 			sourceTree = "<group>";
 		};
 		29EEC9CD17DAB5190044603D /* InfoPlist.strings */ = {

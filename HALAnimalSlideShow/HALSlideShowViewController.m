@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 halhorn. All rights reserved.
 //
 
-#import "HALViewController.h"
+#import "HALSlideShowViewController.h"
 
-@interface HALViewController ()
+@interface HALSlideShowViewController ()
 
 @end
 
-@implementation HALViewController
+@implementation HALSlideShowViewController
 
 - (void)viewDidLoad
 {

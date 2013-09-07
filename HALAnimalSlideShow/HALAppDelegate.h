@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class HALViewController;
+@class HALSlideShowViewController;
 
 @interface HALAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) HALViewController *viewController;
+@property (strong, nonatomic) HALSlideShowViewController *viewController;
 
 @end
