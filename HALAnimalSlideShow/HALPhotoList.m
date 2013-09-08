@@ -8,10 +8,11 @@
 
 #import "HALPhotoList.h"
 #import "HALPhotoEntity.h"
+#import "NSArray+HALRandomSortedArray.h"
 
 @implementation HALPhotoList
 
-- (NSArray *)loadPhotoList
+- (void)loadPhotoList
 {
     // ねこ
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -22,6 +23,10 @@
         [array addObject:entity];
     }
     _photoList = [NSArray arrayWithArray:array];
-    return self.photoList;
+}
+
+- (void)sortRandom
+{
+    _photoList = [self.photoList randomSortedArray];
 }
 @end

@@ -7,8 +7,8 @@
 //
 
 #import "HALAppDelegate.h"
-
 #import "HALSlideShowViewController.h"
+#import "UIViewController+initFromNib.h"
 
 @implementation HALAppDelegate
 
@@ -16,7 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[HALSlideShowViewController alloc] initWithNibName:@"HALViewController" bundle:nil];
+    self.viewController = [[HALSlideShowViewController alloc] initFromNib];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

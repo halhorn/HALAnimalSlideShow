@@ -12,6 +12,7 @@
 
 @property(nonatomic, readonly) NSArray *photoList;
 
--(NSArray *)loadPhotoList;
+- (void)loadPhotoList;
+- (void)sortRandom;
 
 @end

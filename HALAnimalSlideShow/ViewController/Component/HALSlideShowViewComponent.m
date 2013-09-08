@@ -10,9 +10,16 @@
 #import "HALPhotoList.h"
 #import "HALPhotoEntity.h"
 
+#define kHALSlideShowTimerInterval 5
+
 @interface HALSlideShowViewComponent()
 
 @property(nonatomic) HALPhotoList *photoList;
+@property(nonatomic) NSTimer *slideShowTimer;
+@property(nonatomic) int currentIndex;
+
+//@property (weak, nonatomic) IBOutlet UIImageView *slideShowImageView;
+@property (nonatomic) UIImageView *slideShowImageView;
 
 @end
 
@@ -40,6 +47,29 @@
 {
     self.photoList = [[HALPhotoList alloc] init];
     [self.photoList loadPhotoList];
+    self.currentIndex = [self.photoList.photoList count];
+    
+    self.slideShowImageView = [[UIImageView alloc] initWithFrame:self.frame];
+    [self addSubview:self.slideShowImageView];
+    
+    [self slideShowTimerLoop];
+    self.slideShowTimer = [NSTimer scheduledTimerWithTimeInterval:kHALSlideShowTimerInterval
+                                                           target:self
+                                                         selector:@selector(slideShowTimerLoop)
+                                                         userInfo:nil
+                                                          repeats:YES];
+}
+
+- (void)slideShowTimerLoop
+{
+    if (self.currentIndex == [self.photoList.photoList count]) {
+        [self.photoList sortRandom];
+        self.currentIndex = 0;
+    }
+    HALPhotoEntity *entity = self.photoList.photoList[self.currentIndex];
+    [self.slideShowImageView setImage:entity.image];
+    
+    self.currentIndex++;
 }
 
 /*
