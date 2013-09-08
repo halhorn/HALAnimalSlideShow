@@ -17,6 +17,7 @@
 @property(nonatomic) HALPhotoList *photoList;
 @property(nonatomic) NSTimer *slideShowTimer;
 @property(nonatomic) int currentIndex;
+@property(nonatomic) float slideShowInterval;
 
 //@property (weak, nonatomic) IBOutlet UIImageView *slideShowImageView;
 @property (nonatomic) UIImageView *slideShowImageView;
@@ -45,6 +46,8 @@
 
 - (void)setup
 {
+    self.backgroundColor = [UIColor blackColor];
+    
     self.photoList = [[HALPhotoList alloc] init];
     [self.photoList loadPhotoList];
     self.currentIndex = [self.photoList.photoList count];
@@ -52,8 +55,10 @@
     self.slideShowImageView = [[UIImageView alloc] initWithFrame:self.frame];
     [self addSubview:self.slideShowImageView];
     
+    self.slideShowInterval = kHALSlideShowTimerInterval;
+    
     [self slideShowTimerLoop];
-    self.slideShowTimer = [NSTimer scheduledTimerWithTimeInterval:kHALSlideShowTimerInterval
+    self.slideShowTimer = [NSTimer scheduledTimerWithTimeInterval:self.slideShowInterval
                                                            target:self
                                                          selector:@selector(slideShowTimerLoop)
                                                          userInfo:nil
@@ -67,9 +72,50 @@
         self.currentIndex = 0;
     }
     HALPhotoEntity *entity = self.photoList.photoList[self.currentIndex];
-    [self.slideShowImageView setImage:entity.image];
+    [self setImageAndAnimation:entity.image];
     
     self.currentIndex++;
+}
+
+- (void)setImageAndAnimation:(UIImage *)image
+{
+    // set image
+    [self.slideShowImageView setImage:image];
+    
+    // set start frame
+    CGFloat screenWidth = self.frame.size.width;
+    CGFloat screenHeight = self.frame.size.height;
+    CGFloat base_width = MAX(image.size.width / image.size.height * screenHeight, screenWidth);
+    CGFloat base_height = MAX(image.size.height / image.size.width * screenWidth, screenHeight);
+
+    // sw:0 拡大 sw:1 縮小　アニメーション
+    BOOL sw = (BOOL)(rand() % 2);
+    
+    CGFloat scale = sw ? [self randFrom:1 to:1.5] : 1;
+    CGFloat width = base_width * scale;
+    CGFloat height = base_height * scale;
+    CGFloat x = (screenWidth - width) / 2;
+    CGFloat y = (screenHeight - height) / 2;
+    [self.slideShowImageView setFrame:CGRectMake(x, y, width, height)];
+    
+    // animation
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:self.slideShowInterval];
+
+    scale = sw ? 1 : [self randFrom:1 to:1.5];
+    width = base_width * scale;
+    height = base_height * scale;
+    x = [self randFrom:screenWidth - width to:0];
+    y = [self randFrom:screenHeight - height to:0];
+    [self.slideShowImageView setFrame:CGRectMake(x, y, width, height)];
+
+    [UIView commitAnimations];
+}
+
+- (CGFloat)randFrom:(CGFloat)a to:(CGFloat)b
+{
+    CGFloat x = ((CGFloat)arc4random()) / UINT_MAX;
+    return x * (b - a) + a;
 }
 
 /*
